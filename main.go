@@ -28,29 +28,64 @@ func main() {
 
 	slice6 := []int{9, 3, 9, 3, 9, 7, 9}
 	fmt.Println("Source array:", slice6)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice6))
+	result6, err6 := oddoccurrences.Solution(slice6)
+	if err6 != nil {
+		fmt.Println("Error:", err6)
+	} else {
+		fmt.Println("Element without pair:", result6)
+	}
 
 	slice7 := []int{9, 3, 9, 3, 9, 7}
 	fmt.Println("Source array:", slice7)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice7))
+	result7, err7 := oddoccurrences.Solution(slice7)
+	if err7 != nil {
+		fmt.Println("Error:", err7)
+	} else {
+		fmt.Println("Element without pair:", result7)
+	}
 
 	slice8 := []int{9, 3, 9, 3, 9, 9}
 	fmt.Println("Source array:", slice8)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice8))
+	result8, err8 := oddoccurrences.Solution(slice7)
+	if err8 != nil {
+		fmt.Println("Error:", err8)
+	} else {
+		fmt.Println("Element without pair:", result8)
+	}
 
 	slice9 := []int{1, 1, 2, 2, 3, 3, 4}
 	fmt.Println("Source array:", slice9)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice9))
+	result9, err9 := oddoccurrences.Solution(slice9)
+	if err9 != nil {
+		fmt.Println("Error:", err9)
+	} else {
+		fmt.Println("Element without pair:", result9)
+	}
 
 	slice10 := []int{6, 1, 1, 2, 2, 3, 3}
 	fmt.Println("Source array:", slice10)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice10))
+	result10, err10 := oddoccurrences.Solution(slice10)
+	if err10 != nil {
+		fmt.Println("Error:", err10)
+	} else {
+		fmt.Println("Element without pair:", result10)
+	}
 
 	slice11 := []int{1, 1, 2, 3, 3, 4, 4, 5, 6, 7, 7}
 	fmt.Println("Source array:", slice11)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice11))
+	result11, err11 := oddoccurrences.Solution(slice11)
+	if err11 != nil {
+		fmt.Println("Error:", err11)
+	} else {
+		fmt.Println("Element without pair:", result11)
+	}
 
 	slice12 := []int{}
 	fmt.Println("Source array:", slice12)
-	fmt.Println("Element without pair:", oddoccurrences.Solution(slice12))
+	result12, err12 := oddoccurrences.Solution(slice12)
+	if err12 != nil {
+		fmt.Println("Error:", err12)
+	} else {
+		fmt.Println("Element without pair:", result12)
+	}
 }
