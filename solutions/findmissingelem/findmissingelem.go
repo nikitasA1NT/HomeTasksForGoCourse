@@ -1,26 +1,41 @@
 package findmissingelem
 
-import "sort"
+import (
+	"errors"
+	"sort"
+)
 
-func Solution(a []int) int {
+func Solution(a []int) (result int, err error) {
 	copyOfA := make([]int, len(a))
 	copy(copyOfA, a)
 
 	sort.Ints(copyOfA)
 
+	// If array is empty
 	if len(copyOfA) == 0 {
-		return -1
+		return 0, errors.New("empty array")
 	}
 
-	if copyOfA[0] != 1 {
-		return 1
-	}
+	counter := 1
+	resultWasFound := false
+	for i := 0; i < len(copyOfA); i++ {
+		// Check necessary condition, but result was already found
+		if copyOfA[i] != counter && resultWasFound {
+			return 0, errors.New("wrong array")
+		}
 
-	for i := 0; i < len(copyOfA)-1; i++ {
-		if copyOfA[i+1]-copyOfA[i] != 1 {
-			return i + 2
+		if copyOfA[i] != counter && !resultWasFound {
+			resultWasFound = true
+			result = counter // Current number
+			counter += 2     //
+		} else {
+			counter++ // Standard step
 		}
 	}
 
-	return -1
+	if resultWasFound {
+		return result, nil
+	} else {
+		return 0, errors.New("wrong array")
+	}
 }
