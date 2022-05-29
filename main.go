@@ -1,7 +1,6 @@
 package main
 
 import (
-	"HomeTasksForGoCourse/solutions/cyclicrotation"
 	"HomeTasksForGoCourse/solutions/findmissingelem"
 	"HomeTasksForGoCourse/solutions/oddoccurrences"
 	"fmt"
@@ -14,11 +13,6 @@ func main() {
 	// Тесты Чудных вхождений в массив
 	//PrintTestsOfOddOccurrences()
 
-	a := []int{1, 2, 3}
-	fmt.Println("a", a)
-	b := cyclicrotation.SingleShiftRight(a)
-	fmt.Println("a", a)
-	fmt.Println("b", b)
 }
 
 func PrintTestsOfFindMissingElem() {
