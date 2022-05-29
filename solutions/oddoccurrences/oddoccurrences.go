@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func Solution(a []int) (int, error) {
+func Solution(a []int) (result int, err error) {
 	copyOfA := make([]int, len(a))
 	copy(copyOfA, a)
 
@@ -16,11 +16,26 @@ func Solution(a []int) (int, error) {
 		return 0, errors.New("empty array or its length is even")
 	}
 
-	for i := 0; i < len(copyOfA)-1; i += 2 {
-		if copyOfA[i] != copyOfA[i+1] {
-			return copyOfA[i], nil
+	resultWasFound := false
+	for i := 0; i < len(copyOfA)-1; {
+		// Check necessary condition, but result was already found
+		if copyOfA[i] != copyOfA[i+1] && resultWasFound {
+			return 0, errors.New("wrong array")
+		}
+
+		if copyOfA[i] != copyOfA[i+1] && !resultWasFound {
+			resultWasFound = true
+			result = copyOfA[i]
+			i++ // Next elem step
+		} else {
+			i += 2 // Standard step
 		}
 	}
-	// Return last elem because everything is pairs before it
-	return copyOfA[len(copyOfA)-1], nil
+
+	if resultWasFound {
+		return result, nil
+	} else {
+		// Return last elem because there are all pairs before it
+		return copyOfA[len(copyOfA)-1], nil
+	}
 }
