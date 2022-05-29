@@ -1,8 +1,10 @@
 package main
 
 import (
+	"HomeTasksForGoCourse/solutions/cyclicrotation"
 	"HomeTasksForGoCourse/solutions/findmissingelem"
 	"HomeTasksForGoCourse/solutions/oddoccurrences"
+	"HomeTasksForGoCourse/solutions/sequencecheck"
 	"fmt"
 )
 
