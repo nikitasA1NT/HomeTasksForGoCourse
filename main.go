@@ -24,7 +24,10 @@ func main() {
 	//fmt.Println(findmissingelem.Solution(slice5))
 
 	// Тесты Чудных вхождений в массив
+	PrintTestsOfOddOccurrences()
+}
 
+func PrintTestsOfOddOccurrences() {
 	slice6 := []int{9, 3, 9, 3, 9, 7, 9}
 	fmt.Println("Source array:", slice6)
 	result6, err6 := oddoccurrences.Solution(slice6)
