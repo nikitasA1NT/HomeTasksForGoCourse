@@ -21,6 +21,7 @@ func Solution(a []int) (int, error) {
 		if copyOfA[i] != counter {
 			return 0, nil // Array is not a sequence
 		}
+		counter++
 	}
 
 	// Array is a sequence

@@ -3,6 +3,7 @@ package main
 import (
 	"HomeTasksForGoCourse/solutions/findmissingelem"
 	"HomeTasksForGoCourse/solutions/oddoccurrences"
+	"HomeTasksForGoCourse/solutions/sequencecheck"
 	"fmt"
 )
 
@@ -12,6 +13,9 @@ func main() {
 
 	// Тесты Чудных вхождений в массив
 	PrintTestsOfOddOccurrences()
+
+	// Тесты Проверки последовательности
+	PrintTestsOfSequenceCheck()
 }
 
 func PrintTestsOfFindMissingElem() {
@@ -159,5 +163,72 @@ func PrintTestsOfOddOccurrences() {
 		fmt.Println("Error:", err13)
 	} else {
 		fmt.Println("Element without pair:", result13)
+	}
+}
+
+func PrintTestsOfSequenceCheck() {
+	slice1 := []int{4, 1, 3, 2}
+	fmt.Println("Source array:", slice1)
+	result1, err1 := sequencecheck.Solution(slice1)
+	if err1 != nil {
+		fmt.Println("Error:", err1)
+	} else {
+		if result1 == 1 {
+			fmt.Println("Array is a sequence")
+		} else {
+			fmt.Println("Array is not a sequence")
+		}
+	}
+
+	slice2 := []int{4, 1, 3}
+	fmt.Println("Source array:", slice2)
+	result2, err2 := sequencecheck.Solution(slice2)
+	if err2 != nil {
+		fmt.Println("Error:", err2)
+	} else {
+		if result2 == 1 {
+			fmt.Println("Array is a sequence")
+		} else {
+			fmt.Println("Array is not a sequence")
+		}
+	}
+
+	slice3 := []int{}
+	fmt.Println("Source array:", slice3)
+	result3, err3 := sequencecheck.Solution(slice3)
+	if err3 != nil {
+		fmt.Println("Error:", err3)
+	} else {
+		if result3 == 1 {
+			fmt.Println("Array is a sequence")
+		} else {
+			fmt.Println("Array is not a sequence")
+		}
+	}
+
+	slice4 := []int{1}
+	fmt.Println("Source array:", slice4)
+	result4, err4 := sequencecheck.Solution(slice4)
+	if err4 != nil {
+		fmt.Println("Error:", err4)
+	} else {
+		if result4 == 1 {
+			fmt.Println("Array is a sequence")
+		} else {
+			fmt.Println("Array is not a sequence")
+		}
+	}
+
+	slice5 := []int{2}
+	fmt.Println("Source array:", slice5)
+	result5, err5 := sequencecheck.Solution(slice5)
+	if err5 != nil {
+		fmt.Println("Error:", err5)
+	} else {
+		if result5 == 1 {
+			fmt.Println("Array is a sequence")
+		} else {
+			fmt.Println("Array is not a sequence")
+		}
 	}
 }
