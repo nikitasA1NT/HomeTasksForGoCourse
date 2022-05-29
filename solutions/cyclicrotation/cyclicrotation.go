@@ -1,12 +1,8 @@
 package cyclicrotation
 
-import "sort"
-
 func Solution(a []int, k int) []int {
 	copyOfA := make([]int, len(a))
 	copy(copyOfA, a)
-
-	sort.Ints(copyOfA)
 
 	for i := 0; i < k; i++ {
 		SingleShiftRight(copyOfA)
