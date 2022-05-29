@@ -3,7 +3,6 @@ package main
 import (
 	"HomeTasksForGoCourse/solutions/findmissingelem"
 	"HomeTasksForGoCourse/solutions/oddoccurrences"
-	"HomeTasksForGoCourse/solutions/sequencecheck"
 	"fmt"
 )
 
@@ -16,6 +15,9 @@ func main() {
 
 	// Тесты Проверки последовательности
 	PrintTestsOfSequenceCheck()
+
+	// Тесты Циклической ротации
+	PrintTestsOfCyclicRotation()
 }
 
 func PrintTestsOfFindMissingElem() {
@@ -231,4 +233,36 @@ func PrintTestsOfSequenceCheck() {
 			fmt.Println("Array is not a sequence")
 		}
 	}
+}
+
+func PrintTestsOfCyclicRotation() {
+	slice1 := []int{3, 8, 9, 7, 6}
+	k1 := 3
+	fmt.Println("Source array:", slice1)
+	result1 := cyclicrotation.Solution(slice1, k1)
+	fmt.Println("Array right shifted", k1, "times:", result1)
+
+	slice2 := []int{1, 2, 3, 4}
+	k2 := 4
+	fmt.Println("Source array:", slice2)
+	result2 := cyclicrotation.Solution(slice2, k2)
+	fmt.Println("Array right shifted", k1, "times:", result2)
+
+	slice3 := []int{}
+	k3 := 1
+	fmt.Println("Source array:", slice3)
+	result3 := cyclicrotation.Solution(slice3, k3)
+	fmt.Println("Array right shifted", k3, "times:", result3)
+
+	slice4 := []int{1}
+	k4 := 2
+	fmt.Println("Source array:", slice4)
+	result4 := cyclicrotation.Solution(slice4, k4)
+	fmt.Println("Array right shifted", k4, "times:", result4)
+
+	slice5 := []int{1, 2}
+	k5 := 0
+	fmt.Println("Source array:", slice5)
+	result5 := cyclicrotation.Solution(slice5, k5)
+	fmt.Println("Array right shifted", k5, "times:", result5)
 }
